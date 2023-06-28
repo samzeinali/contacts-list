@@ -1,10 +1,12 @@
 import Card from "./Card";
 
-const List = ({users})=> {
+const List = ({users, searchTerm})=> {
     return (
-        <div className="listBox">
-            <div className="listBox__list">
-                {users.map(
+        <div className="w-full boxcenter-c">
+            <div className="w-full px-4 boxcenter-c md:flex-row md:justify-between">
+                {users
+                .filter(({name})=> name.includes(searchTerm))
+                .map(
                     ({id , name , email , phone}) => {
                         return (
                             <Card 

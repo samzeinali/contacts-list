@@ -1,9 +1,10 @@
 const Card = ({key ,name , email , phone}) => {
     return (
         <div className="card" key={key}>
-            <p className="card__name">{name}</p>
-            <p className="card__email">{email}</p>
-            <p className="card__phone">{phone}</p>
+            <h2 className="card__text w-full text-lg">{name}</h2>
+            <hr className="w-100 opacity-90"/>
+            <p className="card__text w-[50%]">{email}</p>
+            <p className="card__text w-[50%] text-right">{phone}</p>
         </div>
     )
 }

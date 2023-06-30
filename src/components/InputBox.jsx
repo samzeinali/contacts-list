@@ -8,8 +8,8 @@ const InputBox = ({name, email , phonenumber , nameChangeHandler , phoneChangeHa
                     <input type="text" name="email" value={email} onChange={emailChangeHandler} className="input"placeholder="please enter Email ..."/>
                     <input type="text" name="phone" value={phonenumber} onChange={phoneChangeHandler} className="input"placeholder="please enter PhoneNumber ..."/>
                     <input type="text" name="search" value={searchTerm} onChange={searchHandler} className="input"placeholder="Search ..."/>
+                    <button onClick={submitform} className="custom-button">Add User</button>
                 </form>
-                <button onClick={submitform} className="custom-button">Add User</button>
             </div>
             <hr />
         </div>

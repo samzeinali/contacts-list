@@ -21,7 +21,7 @@
     }
     .card {
         @apply p-4 rounded-xl flex flex-row flex-wrap justify-between border-black border-[1px] border-solid border-opacity-50 my-2 w-full md:w-[49%]
-        bg-gray-50 hover:bg-gray-100 hover:border-[2p] transition-[350ms] ease-linear
+        bg-gray-50 hover:bg-gray-100 hover:border-[2p] transition-[350ms] ease-linear xl:w-[32%] xl:mr-4
     }
     .card:hover {
         scale: 1.02;

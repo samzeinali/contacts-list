@@ -3,7 +3,7 @@ import Card from "./Card";
 const List = ({users, searchTerm})=> {
     return (
         <div className="w-full boxcenter-c">
-            <div className="w-full px-4 boxcenter-c md:flex-row md:justify-between">
+            <div className="w-full px-4 boxcenter-c md:flex-row md:justify-between xl:justify-stretch">
                 {users
                 .filter(({name})=> name.includes(searchTerm))
                 .map(

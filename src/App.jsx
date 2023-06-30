@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useEffect} from 'react'
 import InputBox from './components/InputBox';
 import List from './components/Lsit';
 import "./index.css"
@@ -10,6 +10,12 @@ function App() {
   const [Email , setEmail] = useState("");
   const [SearchTerm , setSearchTerm] = useState("")
 
+  useEffect(() => {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    if (contacts) {
+     setUsers(contacts)
+    }
+  }, []);
   const nameChangeHandler = (event)=> {
     setName(event.target.value);
   }
@@ -19,8 +25,13 @@ function App() {
   const phoneChangeHandler = (event)=> {
     setPhone(event.target.value);
   }
-  const submitform = () => {
-    setUsers([...Users , {id : Users.length + 1 , name : Name , email : Email , phone : Phone}])
+  const submitform = (event) => {
+    event.preventDefault();
+    setUsers([...Users , {id : Users.length + 1 , name : Name , email : Email , phone : Phone}]);
+    setEmail("");
+    setName("");
+    setPhone("");
+    localStorage.setItem("contacts" , JSON.stringify(Users))
   }
   const searchHandler = (event)=> {
     console.log(event.target.value);
